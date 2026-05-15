@@ -224,6 +224,7 @@ nav:
       - Icons, Emojis: authoring/icons-emojis.md
       - Images: authoring/images.md
       - Lists: authoring/lists.md
+      - Macros: authoring/macros.md
       - Math: authoring/math.md
       - Tooltips: authoring/tooltips.md
   - Community:
