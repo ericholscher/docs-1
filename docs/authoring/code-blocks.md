@@ -166,7 +166,7 @@ your configuration to enable them globally:
 
     ``` toml
     [project.theme]
-    feature = [
+    features = [
       "content.code.annotate" # (1)!
     ]
     ```
