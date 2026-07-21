@@ -69,6 +69,27 @@ prerequisite for the following features:
 
 ## Preview as you write
 
+### Zensical Studio
+
+[Zensical Studio] brings workspace intelligence to **Zensical** and **MkDocs projects**
+and integrates with Visual Studio Code and similar editors[^2]. It gives you a
+synchronized side-by-side view of your Markdown source and rendered
+documentation, with the preview updating as you write:
+
+![Editor]
+![Editor dark]
+
+  [Zensical Studio]: https://zensical.org/studio
+  [Editor]: assets/screenshots/editor.png#gh-light-mode-only
+  [Editor dark]: assets/screenshots/editor-dark.png#gh-dark-mode-only
+
+  [^2]:
+    Zensical Studio will be supported in more editors in the future,
+    including JetBrains IDEs and
+    Neovim.
+
+### Zensical
+
 Zensical includes a web server, so you can preview your documentation site as
 you write. The server will automatically rebuild the site when you make changes
 to source files. Start it with:
@@ -85,6 +106,7 @@ Point your browser to [localhost:8000][live preview] and you should see:
   [live preview]: http://localhost:8000
   [Creating your site]: assets/screenshots/creating-your-site.png#gh-light-mode-only
   [Creating your site dark]: assets/screenshots/creating-your-site-dark.png#gh-dark-mode-only
+  [Zensical Studio]: https://zensical.org/studio
 
 ## Build your site
 
