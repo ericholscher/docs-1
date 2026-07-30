@@ -61,6 +61,36 @@ documentation, with the preview updating as you write:
 ![Editor]
 ![Editor dark]
 
+Zensical Studio provides:
+
+<div class="grid cards" markdown>
+
+-   :material-link-variant: &nbsp; **Link Intelligence**
+
+    ---
+
+    Links, anchors, references, and snippets are resolved across the workspace, so they can be navigated, renamed, and kept up to date.
+
+-   :material-eye-outline: &nbsp; **Markdown Preview**
+
+    ---
+
+    A side-by-side preview renders the current Python Markdown document and updates while you edit, so you can stay in your editor while writing.
+
+-   :material-format-text: &nbsp; **Markdown Formatter**
+
+    ---
+
+    A structure-aware formatter for Python Markdown that understands nested extensions such as tabs, admonitions, lists, and code blocks.
+
+-   :material-alert-outline: &nbsp; **Markdown Linter** <small>coming soon</small>
+
+    ---
+
+    Workspace-wide diagnostics, including cross-file link tracking and analysis, and structural and prose linting for common Markdown issues.
+
+</div>
+
 ### Zensical
 
 Zensical includes a web server, so you can preview your documentation site as
