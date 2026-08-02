@@ -75,13 +75,13 @@ and/or end of the divider.
     ```
 
     <div class="result" markdown>
-    
+
     | Method   | Description                          |
     | :------- | :----------------------------------- |
     | `GET`    | :lucide-check: Fetch resource        |
     | `PUT`    | :lucide-check-check: Update resource |
     | `DELETE` | :lucide-x: Delete resource           |
-    
+
     </div>
 
 === "Center"
@@ -95,13 +95,13 @@ and/or end of the divider.
     ```
 
     <div class="result" markdown>
-    
+
     |  Method  |             Description              |
     | :------: | :----------------------------------: |
     |  `GET`   |    :lucide-check: Fetch resource     |
     |  `PUT`   | :lucide-check-check: Update resource |
     | `DELETE` |      :lucide-x: Delete resource      |
-    
+
     </div>
 
 === "Right"
@@ -115,13 +115,13 @@ and/or end of the divider.
     ```
 
     <div class="result" markdown>
-    
+
     |   Method |                          Description |
     | -------: | -----------------------------------: |
     |    `GET` |        :lucide-check: Fetch resource |
     |    `PUT` | :lucide-check-check: Update resource |
     | `DELETE` |           :lucide-x: Delete resource |
-    
+
     </div>
 
 ## Customization

@@ -73,12 +73,12 @@ classes:
 <div class="result" markdown>
 
   <div class="grid cards" markdown>
-  
+
 - :fontawesome-brands-html5: **HTML** for content and structure
 - :fontawesome-brands-js: **JavaScript** for interactivity
 - :fontawesome-brands-css3: **CSS** for text running out of boxes
 - :fontawesome-brands-internet-explorer: **Internet Explorer** ... huh?
-  
+
   </div>
 
 </div>
@@ -129,7 +129,7 @@ includes icons and links:
 <div class="result" markdown>
 
   <div class="grid cards" markdown>
-  
+
 -   :material-clock-fast:{ .lg .middle } **Set up in 5 minutes**
 
     ---
@@ -162,7 +162,7 @@ includes icons and links:
     Zensical is licensed under MIT and available on [GitHub]
 
     [:octicons-arrow-right-24: License][license]
-  
+
   </div>
 
 </div>
@@ -198,7 +198,7 @@ class to any block element inside a `grid`:
 <div class="result" markdown>
 
   <div class="grid" markdown>
-  
+
 :fontawesome-brands-html5: **HTML** for content and structure
 { .card }
 
@@ -209,7 +209,7 @@ class to any block element inside a `grid`:
 { .card }
 
 > :fontawesome-brands-internet-explorer: **Internet Explorer** ... huh?
-  
+
   </div>
 
 </div>
@@ -259,7 +259,7 @@ by using a `div` with the `grid` class:
 <div class="result" markdown>
 
   <div class="grid" markdown>
-  
+
 === "Unordered list"
 
     - Sed sagittis eleifend rutrum
@@ -285,7 +285,7 @@ by using a `div` with the `grid` class:
     2. Donec vitae suscipit est
     3. Nulla tempor lobortis orci
 ```
-  
+
   </div>
 
 </div>

@@ -391,7 +391,7 @@ at `1`, regardless of the starting line number specified as part of
     ````
 
     <div class="result" markdown>
-    
+
     ``` py linenums="1" hl_lines="2 3"
     def bubble_sort(items):
         for i in range(len(items)):
@@ -399,7 +399,7 @@ at `1`, regardless of the starting line number specified as part of
                 if items[j] > items[j + 1]:
                     items[j], items[j + 1] = items[j + 1], items[j]
     ```
-    
+
     </div>
 
 === "Line ranges"
@@ -415,7 +415,7 @@ at `1`, regardless of the starting line number specified as part of
     ````
 
     <div class="result" markdown>
-    
+
     ``` py linenums="1" hl_lines="3-5"
     def bubble_sort(items):
         for i in range(len(items)):
@@ -423,7 +423,7 @@ at `1`, regardless of the starting line number specified as part of
                 if items[j] > items[j + 1]:
                     items[j], items[j + 1] = items[j + 1], items[j]
     ```
-    
+
     </div>
 
 ### Highlight inline code blocks

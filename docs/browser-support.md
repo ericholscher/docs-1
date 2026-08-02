@@ -30,11 +30,11 @@ range, please [open an issue]:
 | :fontawesome-brands-opera: Opera     |     36+ |      03/2016 |   1.44% |   .01% |      1.45% |
 |                                      |         |              |         |        | **92.67%** |
 
-  <figcaption markdown>
-  
-  Browser support matrix sourced from [caniuse.com].[^1]
-  
-  </figcaption>
+<figcaption markdown>
+
+Browser support matrix sourced from [caniuse.com].[^1]
+
+</figcaption>
 
 </figure>
 

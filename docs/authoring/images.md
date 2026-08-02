@@ -54,13 +54,13 @@ respective alignment directions via the `align` attribute, i.e. `align=left` or
     ```
 
     <div class="result" markdown>
-    
+
     ![Image title](https://dummyimage.com/600x400/f5f5f5/aaaaaa?text=–%20Image%20–){ align=left width=300 }
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
-    
+
     </div>
 
 === "Right"
@@ -70,13 +70,13 @@ respective alignment directions via the `align` attribute, i.e. `align=left` or
     ```
 
     <div class="result" markdown>
-    
+
     ![Image title](https://dummyimage.com/600x400/f5f5f5/aaaaaa?text=–%20Image%20–){ align=right width=300 }
 
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla et euismod
     nulla. Curabitur feugiat, tortor non consequat finibus, justo purus auctor
     massa, nec semper lorem quam in massa.
-    
+
     </div>
 
 If there's insufficient space to render the text next to the image, the image
@@ -96,8 +96,11 @@ but it's always possible to use the [Markdown in HTML] extension with literal
 
 ``` html title="Image with caption"
 <figure markdown="span">
-  ![Image title](https://dummyimage.com/600x400/){ width="300" }
-  <figcaption>Image caption</figcaption>
+
+![Image title](https://dummyimage.com/600x400/){ width="300" }
+
+<figcaption>Image caption</figcaption>
+
 </figure>
 ```
 
