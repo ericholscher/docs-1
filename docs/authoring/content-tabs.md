@@ -20,9 +20,11 @@ following lines to your configuration file:
 === "`zensical.toml`"
 
     ``` toml
-    [project.markdown_extensions.pymdownx.superfences]
-    [project.markdown_extensions.pymdownx.tabbed]
-    alternate_style = true
+    [project.markdown_extensions]
+    pymdownx.superfences = {}
+    pymdownx.tabbed = {
+      alternate_style = true
+    }
     ```
 
 === "`mkdocs.yml`"
@@ -68,9 +70,13 @@ function with the following lines:
 === "`zensical.toml`"
 
     ``` toml
-    [project.markdown_extensions.pymdownx.tabbed.slugify]
-    object = "pymdownx.slugs.slugify"
-    kwds = { case = "lower" }
+    [project.markdown_extensions]
+    pymdownx.tabbed = {
+      slugify = {
+        object = "pymdownx.slugs.slugify",
+        kwds.case = "lower",
+      }
+    }
     ```
 
 === "`mkdocs.yml`"
@@ -95,8 +101,9 @@ following lines to your configuration:
 
     ``` toml
     [project.theme]
-    features = ["content.tabs.link"]
-
+    features = [
+      "content.tabs.link",
+    ]
     ```
 
 === "`mkdocs.yml`"

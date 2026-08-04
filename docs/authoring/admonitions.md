@@ -19,9 +19,10 @@ configuration:
 === "`zensical.toml`"
 
     ``` toml
-    [project.markdown_extensions.admonition]
-    [project.markdown_extensions.pymdownx.details]
-    [project.markdown_extensions.pymdownx.superfences]
+    [project.markdown_extensions]
+    admonition = {}
+    pymdownx.details = {}
+    pymdownx.superfences = {}
     ```
 
 === "`mkdocs.yml`"
@@ -48,8 +49,8 @@ lines to your configuration:
 === "`zensical.toml`"
 
     ``` toml
-    [project.theme.icon]
-    admonition = {<type> = "<icon>"}
+    [project.theme.icon.admonition]
+    <type> = "<icon>"
     ```
 
     ??? example "Expand to show alternate icon sets"

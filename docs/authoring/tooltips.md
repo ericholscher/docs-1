@@ -21,9 +21,10 @@ following line to your configuration:
 === "`zensical.toml`"
 
     ``` toml
-    [project.markdown_extensions.abbr]
-    [project.markdown_extensions.attr_list]
-    [project.markdown_extensions.pymdownx.snippets]
+    [project.markdown_extensions]
+    abbr = {}
+    attr_list = {}
+    pymdownx.snippets = {}
     ```
 
 === "`mkdocs.yml`"
@@ -52,7 +53,7 @@ lines to your configuration::
     ``` toml
     [project.theme]
     features = [
-        "content.tooltips"
+      "content.tooltips",
     ]
     ```
 
@@ -153,8 +154,10 @@ pages with the following configuration:
 === "`zensical.toml`"
 
     ``` toml
-    [project.markdown_extensions.pymdownx.snippets]
-    auto_append = ["includes/abbreviations.md"]
+    [project.markdown_extensions]
+    pymdownx.snippets = {
+      auto_append = ["includes/abbreviations.md"],
+    }
     ```
 
 === "`mkdocs.yml`"

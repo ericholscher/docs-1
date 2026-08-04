@@ -35,7 +35,7 @@ the content itself. The paths need to be relative to the [`docs_dir`][docs_dir].
     [project]
     nav = [
       "index.md",
-      "about.md"
+      "about.md",
     ]
     ```
 
@@ -55,8 +55,8 @@ for a page, you can also explicitly specify a title:
     ``` toml
     [project]
     nav = [
-      {"Home" = "index.md"},
-      {"About" = "about.md"}
+      { "Home" = "index.md" },
+      { "About" = "about.md" },
     ]
     ```
 
@@ -78,12 +78,12 @@ your users to the information they require.
     ``` toml
     [project]
     nav = [
-      {"Home" = "index.md"},
-      {"About" = [
-         "about/index.md",
-         "about/vision.md",
-         "about/team.md"
-      ]}
+      { "Home" = "index.md" },
+      { "About" = [
+        "about/index.md",
+        "about/vision.md",
+        "about/team.md",
+      ] },
     ]
     ```
 
@@ -108,7 +108,7 @@ string that cannot be resolved to a Markdown page is treated as a URL.
     ``` toml
     [project]
     nav = [
-      {"GitHub Repo" = "https://github.com/zensical/docs"}
+      { "GitHub Repo" = "https://github.com/zensical/docs" },
     ]
     ```
 
@@ -133,7 +133,7 @@ the following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.instant"
+      "navigation.instant",
     ]
     ```
 
@@ -168,8 +168,8 @@ immediately upon navigation. Enable it with:
     ``` toml
     [project.theme]
     features = [
-        "navigation.instant",
-        "navigation.instant.prefetch"
+      "navigation.instant",
+      "navigation.instant.prefetch",
     ]
     ```
 
@@ -194,8 +194,8 @@ enable it in your configuration with:
     ``` toml
     [project.theme]
     features = [
-        "navigation.instant",
-        "navigation.instant.progress"
+      "navigation.instant",
+      "navigation.instant.progress",
     ]
     ```
 
@@ -246,12 +246,14 @@ instant previews on a per-page or per-section level for your documentation:
 === "`zensical.toml`"
 
     ``` toml
-    [project.markdown_extensions.zensical.extensions.preview]
-    configurations = [
-        { targets.include = [
-            "customization.md",
-            "setup/extensions/*"
-        ]}
+    [project.markdown_extensions]
+    zensical.extensions.preview.configurations = [
+      {
+        targets.include = [
+          "customization.md",
+          "setup/extensions/*",
+        ]
+      },
     ]
     ```
 
@@ -259,7 +261,7 @@ instant previews on a per-page or per-section level for your documentation:
 
     ``` yaml
     markdown_extensions:
-      - material.extensions.preview:
+      - zensical.extensions.preview:
           configurations:
             - targets:
                 include:
@@ -276,18 +278,26 @@ extensions in the setup guide.
     === "`zensical.toml`"
 
         ``` toml
-        [[project.markdown_extensions.zensical.extensions.preview.configurations]]
-        sources.include = [...]
-        sources.exclude = [...]
-        targets.include = [...]
-        targets.exclude = [...]
+        [project.markdown_extensions]
+        zensical.extensions.preview.configurations = [
+          {
+            sources = {
+              include = [],
+              exclude = [],
+            }, # (1)!
+            targets = {
+              include = [],
+              exclude = [],
+            }, # (2)!
+          },
+        ]
         ```
 
     === "`mkdocs.yml`"
 
         ``` yaml
         markdown_extensions:
-          - material.extensions.preview:
+          - zensical.extensions.preview:
               configurations:
                 - sources: # (1)!
                     include:
@@ -333,7 +343,7 @@ following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.tracking"
+      "navigation.tracking",
     ]
     ```
 
@@ -356,7 +366,7 @@ following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.tabs"
+      "navigation.tabs",
     ]
     ```
 
@@ -389,8 +399,8 @@ flags to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.tabs",
-        "navigation.tabs.sticky"
+      "navigation.tabs",
+      "navigation.tabs.sticky",
     ]
     ```
 
@@ -414,7 +424,7 @@ following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.sections"
+      "navigation.sections",
     ]
     ```
 
@@ -451,7 +461,7 @@ Add the following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.expand"
+      "navigation.expand",
     ]
     ```
 
@@ -485,7 +495,7 @@ your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.path"
+      "navigation.path",
     ]
     ```
 
@@ -518,7 +528,7 @@ following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.prune" # (1)!
+      "navigation.prune", # (1)!
     ]
     ```
 
@@ -554,7 +564,7 @@ following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.indexes" # (1)!
+      "navigation.indexes", # (1)!
     ]
     ```
 
@@ -581,13 +591,12 @@ navigation section:
     ``` toml
     [project]
     nav = [
-        {"Section" = [
-            "section/index.md", # (1)!
-            {"Page 1" = "section/page-1.md"},
-            ...
-            {"Page n" = "section/page-n.md"}
-
-        ]}
+      { "Section" = [
+        "section/index.md", # (1)!
+        { "Page 1" = "section/page-1.md" },
+        # ...
+        { "Page n" = "section/page-n.md" },
+      ] },
     ]
     ```
 
@@ -600,7 +609,7 @@ navigation section:
       - Section:
         - section/index.md # (1)!
         - Page 1: section/page-1.md
-        ...
+        # ...
         - Page n: section/page-n.md
     ```
 
@@ -619,7 +628,7 @@ following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "toc.follow"
+      "toc.follow",
     ]
     ```
 
@@ -642,7 +651,7 @@ to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "toc.integrate" # (1)!
+      "toc.integrate", # (1)!
     ]
     ```
 
@@ -683,7 +692,7 @@ following lines to your configuration:
     ``` toml
     [project.theme]
     features = [
-        "navigation.top"
+      "navigation.top",
     ]
     ```
 
@@ -764,7 +773,9 @@ of CSS:
 
     ``` toml
     [project]
-    extra_css = ["stylesheets/extra.css"]
+    extra_css = [
+      "stylesheets/extra.css",
+    ]
     ```
 
 === "`mkdocs.yml`"

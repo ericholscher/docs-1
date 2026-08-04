@@ -21,10 +21,16 @@ will automatically initialize the JavaScript runtime when a page includes a
 === "`zensical.toml`"
 
     ``` toml
-    [project.markdown_extensions.pymdownx.superfences]
-    custom_fences = [
-      { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
-    ]
+    [project.markdown_extensions]
+    pymdownx.superfences = {
+      custom_fences = [
+        {
+          name = "mermaid",
+          class = "mermaid",
+          format = "pymdownx.superfences.fence_code_format",
+        },
+      ],
+    }
     ```
 
 === "`mkdocs.yml`"
@@ -293,7 +299,9 @@ you can do so by adding a custom JavaScript file to your configuration:
 
     ``` toml
     [project]
-    extra_javascript = ["javascripts/mermaid.mjs"]
+    extra_javascript = [
+      "javascripts/mermaid.mjs",
+    ]
     ```
 
 === "`mkdocs.yml`"
