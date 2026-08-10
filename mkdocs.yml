@@ -222,6 +222,7 @@ nav:
       - Content tabs: authoring/content-tabs.md
       - Data tables: authoring/data-tables.md
       - Diagrams: authoring/diagrams.md
+      - Directives: authoring/directives.md
       - Footnotes: authoring/footnotes.md
       - Formatting: authoring/formatting.md
       - Grids: authoring/grids.md
