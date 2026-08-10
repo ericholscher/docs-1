@@ -13,11 +13,9 @@ of Markdown sources. Use them to select block content, insert values, and
 reuse whole source files for products, editions, deployment models, or other
 named variants.
 
-!!! info "Preview in Zensical Spark"
+!!! info "Early access via Zensical Spark"
 
-    The Directives extension is currently available only in [Zensical Spark].
-    We will add more functionality based on feedback from Spark members.
-    You can explore our example project within Zensical Studio (see below).
+    Directives is available in [Zensical Spark] and ready to use today. We'll continue to iterate on it before making it generally available. If your team maintains shared content across products, versions, or audiences, we'd value your feedback. You can explore our example project within Zensical Studio (see below).
 
 ## See it in Zensical Studio
 
