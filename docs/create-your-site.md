@@ -65,19 +65,19 @@ Zensical Studio provides:
 
 <div class="grid cards" markdown>
 
--   :material-link-variant: &nbsp; **Link Intelligence**
+-   :material-link-variant: &nbsp; [Link Intelligence]
 
     ---
 
     Links, anchors, references, and snippets are resolved across the workspace, so they can be navigated, renamed, and kept up to date.
 
--   :material-eye-outline: &nbsp; **Markdown Preview**
+-   :material-eye-outline: &nbsp; [Markdown Preview]
 
     ---
 
     A side-by-side preview renders the current Python Markdown document and updates while you edit, so you can stay in your editor while writing.
 
--   :material-format-text: &nbsp; **Markdown Formatter**
+-   :material-format-text: &nbsp; [Markdown Formatter]
 
     ---
 
@@ -137,7 +137,10 @@ read from a local filesystem rather than a web server (such as in a
 [installed]: get-started.md
 [Instant navigation]: setup/navigation.md#instant-navigation
 [Instant previews]: setup/navigation.md#instant-previews
+[Link Intelligence]: https://zensical.org/studio/workflows/link-intelligence/
 [live preview]: http://localhost:8000
+[Markdown Formatter]: https://zensical.org/studio/write/formatting/
+[Markdown Preview]: https://zensical.org/studio/write/preview/
 [new]: usage/new.md#usage
 [offline usage]: setup/offline.md
 [site_name]: setup/basics.md#site_name
