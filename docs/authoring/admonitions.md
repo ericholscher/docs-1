@@ -490,21 +490,21 @@ Five callout types are supported by GitHub. A direct mapping exists to the
 admonition types listed in the [supported types] section for three of them:
 
 `[!NOTE]`
-:   `note`
+: `note`
 
 `[!TIP]`
-:   `tip`
+: `tip`
 
 `[!WARNING]`
-:   `warning`
+: `warning`
 
 `[!IMPORTANT]`
-:   `important` – not a built-in admonition type, so the default admonition
-    styling is used unless a [custom style] is added.
+: `important` – not a built-in admonition type, so the default admonition
+  styling is used unless a [custom style] is added.
 
 `[!CAUTION]`
-:   `caution` – not a built-in admonition type, so the default admonition
-    styling is used unless a [custom style] is added.
+: `caution` – not a built-in admonition type, so the default admonition
+  styling is used unless a [custom style] is added.
 
 With the [Quotes] extension, any admonition type supported by Zensical can be
 used, not only these five.
