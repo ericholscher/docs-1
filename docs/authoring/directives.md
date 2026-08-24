@@ -40,7 +40,7 @@ Download the wheel provided within Zensical Spark, then install it into the
 Python environment that you use to build your site:
 
 ``` sh
-pip install path/to/zensical_directives-0.1.0-py3-none-any.whl
+pip install path/to/zensical_directives-0.1.1-py3-none-any.whl
 ```
 
 ## Configuration
@@ -50,6 +50,17 @@ Enable the extension in `zensical.toml`:
 ``` toml
 [project.markdown_extensions]
 zensical.directives = {}
+```
+
+`@use` resolves source-file paths from `content_dir`, which defaults to the
+project's `content` directory. To use another directory, configure it with the
+extension:
+
+``` toml
+[project.markdown_extensions]
+zensical.directives = {
+  content_dir = "shared",
+}
 ```
 
 Create `catalog.toml` in the project root. It declares the values that source
@@ -86,6 +97,10 @@ contexts that your documentation supports. It has three top-level parts:
 
 Each variable declares one string or a list of allowed strings. Every named
 variant must assign one allowed string value to every declared variable.
+
+For the minimal use case, a catalog may omit `variables` entirely. Its variants
+then have no assignments, but you can still select one and test or insert the
+built-in `_variant` value.
 
 Variable names must start with an ASCII letter and may then use ASCII letters,
 digits, and underscores. Names beginning with an underscore are reserved for
@@ -168,12 +183,20 @@ other than hyphens, or non-ASCII characters:
 
 ### Insert a value
 
-Use `@var{name}` in ordinary Markdown text to insert a selected catalog value.
-The built-in `_variant` value is the selected variant's name:
+Use `@var{name}` to insert a selected catalog value in ordinary Markdown text
+and scalar fields such as link and image destinations or titles. The built-in
+`_variant` value is the selected variant's name:
 
 ``` markdown
 This guide covers the @var{deployment} deployment for the @var{_variant} variant.
+
+[Open the guide](@var{guide_url} "@var{guide_title}")
 ```
+
+Variables also work in reference-definition destinations and titles, and in
+quoted Markdown or HTML attribute values. They do not work in reference
+identifiers, code, math, Jinja blocks, snippet paths, `@use` targets, or
+conditional expressions.
 
 ### Reuse a source file
 
