@@ -455,10 +455,28 @@ Moreover, link validation assumes that bracketed phrases are intended to be link
 
 ### Strict mode
 
-If you want to enforce link validation and fail the build when issues are found, you can enable strict mode by using the `--strict` command-line option:
+If you want to enforce link validation and fail the build when issues are found,
+you can enable strict mode by using the `--strict` command-line option.
+Alternatively, you can set a project to always build in strict mode by adding
+this to the configuration:
+
+=== "`zensical.toml`"
+
+    ``` toml
+    [project]
+    strict = true
+    ```
+
+=== "`mkdocs.yml`"
+
+    ``` yaml
+    strict: true
+    ```
+
+Say you have a Markdown file with an undefined link target `#undefined`:
 
 ``` markdown title="index.md"
-This is an [unresolved reference][id].
+[link target is missing](#undefined).
 ```
 
 <div class="result" markdown>
@@ -466,12 +484,12 @@ This is an [unresolved reference][id].
 ``` console
 $ zensical build --strict
 ...
-Warning: unresolved link reference
-   ╭─[ index.md:1:35 ]
+Warning: anchor does not exist
+   ╭─[ index.md:5:27 ]
    │
- 1 │ This is an [unresolved reference][id].
-   │                                   ─┬
-   │                                    ╰── unresolved link reference
+ 5 │ [link target is missing](#undefined)
+   │                           ────┬────
+   │                               ╰────── anchor does not exist
 ───╯
 1 issue found
 Aborted because --strict flag is set
