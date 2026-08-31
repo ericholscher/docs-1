@@ -464,8 +464,8 @@ shadow_tags_prefix = "_"
 shadow_tags_suffix = "Internal"
 ```
 
-A page or listing can override the global setting with `shadow`. A shadowed
-parent also hides its child tags when hierarchical tags are enabled.
+A listing can override the global setting with `shadow`. A shadowed parent also
+hides its child tags when hierarchical tags are enabled.
 
 ## Multiple tag instances
 
