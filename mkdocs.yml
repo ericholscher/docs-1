@@ -205,6 +205,12 @@ nav:
           - Versioning: setup/versioning.md
           - Comment system: setup/comment-system.md
           - Offline usage: setup/offline.md
+  - Plugins:
+      - Plugins: plugins/index.md
+      - Metadata: plugins/meta.md
+      - Tags: plugins/tags.md
+      - Redirects: plugins/redirects.md
+      - Minification: plugins/minify.md
   - Extensions:
       - About extensions: setup/extensions/about.md
       - GLightbox: setup/extensions/glightbox.md
