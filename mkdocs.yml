@@ -87,6 +87,9 @@ plugins:
   - search
   - tags
   - markdown-exec
+  - redirects:
+      redirect_maps:
+        setup/tags.md: plugins/tags.md
 
 # Additional configuration
 extra:
@@ -201,7 +204,6 @@ nav:
           - Site search: setup/search.md
           - Site analytics: setup/analytics.md
           - Social cards: setup/social-cards.md
-          - Tags: setup/tags.md
           - Versioning: setup/versioning.md
           - Comment system: setup/comment-system.md
           - Offline usage: setup/offline.md
