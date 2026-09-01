@@ -32,7 +32,7 @@ Enable tags with the default settings:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     ```
 
 === "`mkdocs.yml`"
@@ -42,9 +42,8 @@ Enable tags with the default settings:
       - tags
     ```
 
-In `mkdocs.yml`, Zensical accepts both `tags` and `material/tags` for the
-default instance. In `zensical.toml`, use the corresponding name as a key under
-`project.plugins`.
+Use `tags` as the plugin name in both configuration formats. For compatibility,
+Zensical also accepts `material/tags` as an alias.
 
 ### General
 
@@ -54,7 +53,7 @@ The plugin is enabled when it is configured. The default value of `enabled` is
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     enabled = true
     ```
 
@@ -72,23 +71,23 @@ Set `enabled` to `false` to disable an instance.
 
 You can configure multiple instances of the tags plugin when different parts
 of a site need separate source filters, metadata properties, or listing
-directives. Add a name after `tags/` or `material/tags/` to distinguish each
-instance. Each instance keeps its settings isolated.
+directives. Add a name after `tags/` to distinguish each instance. Each
+instance keeps its settings isolated.
 
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags/public"]
+    [project.plugins."tags/public"]
     listings_directive = "public/tags"
 
-    [project.plugins."material/tags/public".filters]
+    [project.plugins."tags/public".filters]
     exclude = ["private/**"]
 
-    [project.plugins."material/tags/private"]
+    [project.plugins."tags/private"]
     listings_directive = "private/tags"
     tags_name_property = "labels"
 
-    [project.plugins."material/tags/private".filters]
+    [project.plugins."tags/private".filters]
     include = ["private/**"]
     ```
 
@@ -124,7 +123,7 @@ sources, and `exclude` removes matching sources after inclusion.
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags/public".filters]
+    [project.plugins."tags/public".filters]
     exclude = ["private/**"]
     ```
 
@@ -154,7 +153,7 @@ It defaults to `true`:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags = true
     ```
 
@@ -177,7 +176,7 @@ The default separator is `/`. Use `tags_hierarchy_separator` to change it:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_hierarchy = true
     tags_hierarchy_separator = "/"
     ```
@@ -204,7 +203,7 @@ by the [metadata plugin]:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_allowed = ["Guide/Rust", "Guide/Python", "Public"]
     ```
 
@@ -230,7 +229,7 @@ configuration is:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_slugify = "pymdownx:lower"
     tags_slugify_separator = "-"
     tags_slugify_format = "tag:{slug}"
@@ -259,7 +258,7 @@ configured separator.
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_slugify = "pymdownx:lower"
     ```
 
@@ -282,7 +281,7 @@ tag slugs should handle Unicode case variants consistently.
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_slugify = "pymdownx:fold"
     ```
 
@@ -302,7 +301,7 @@ useful when compatibility with Python Markdown is important.
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_slugify = "markdown:slugify"
     ```
 
@@ -321,7 +320,7 @@ Use this option to replace spaces in a slug with a different separator:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_slugify_separator = "_"
     ```
 
@@ -341,7 +340,7 @@ Use this option to change the format of a tag slug. The default format is
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_slugify_format = "tag:{slug}"
     ```
 
@@ -362,7 +361,7 @@ The default strategy is `tag_name`, and the other supported strategy is
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     tags_sort_by = "tag_name_casefold"
     tags_sort_reverse = true
     ```
@@ -384,7 +383,7 @@ defaults to `true`:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     listings = true
     ```
 
@@ -407,7 +406,7 @@ change the name of the directive that the plugin processes.
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     listings_directive = "material/tags"
     ```
 
@@ -427,7 +426,7 @@ per-listing options are documented under [Filter a listing](#filter-a-listing).
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags".listings_map.cards]
+    [project.plugins.tags.listings_map.cards]
     include = ["Public"]
     layout = "cards"
     toc = false
@@ -454,7 +453,7 @@ listings.
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     listings_sort_by = "item_url"
     listings_sort_reverse = true
     listings_tags_sort_by = "tag_name_casefold"
@@ -484,7 +483,7 @@ listing can override this global setting with its `layout` option.
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     listings_layout = "default"
     ```
 
@@ -504,7 +503,7 @@ of contents. The default is `true`:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     listings_toc = true
     ```
 
@@ -531,7 +530,7 @@ Define shadow tags by exact name, prefix, or suffix:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     shadow_tags = ["Draft", "Internal"]
     shadow_tags_prefix = "_"
     shadow_tags_suffix = "Internal"
@@ -555,7 +554,7 @@ for builds and `true` for `serve`.
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     shadow = true
     ```
 
@@ -572,7 +571,7 @@ Use `shadow_on_serve` to change the `serve` default:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags"]
+    [project.plugins.tags]
     shadow_on_serve = false
     ```
 
@@ -798,7 +797,7 @@ the directive:
 === "`zensical.toml`"
 
     ``` toml
-    [project.plugins."material/tags".listings_map.cards]
+    [project.plugins.tags.listings_map.cards]
     include = ["Public"]
     layout = "cards"
     toc = false
