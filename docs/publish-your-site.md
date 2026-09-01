@@ -120,8 +120,7 @@ guides, please contact the author.
 
 - [Azure Static Web Apps with GitHub Actions](https://zensical-guides.hypercat.net/azure-static-web-app-github/)
 - [Azure Static Web Apps with Azure DevOps](https://zensical-guides.hypercat.net/azure-static-web-app-devops/)
-- [Deploying Zensical on Read the Docs
-](https://docs.readthedocs.com/platform/stable/intro/zensical.html)
+- [Deploying Zensical on Read the Docs](https://docs.readthedocs.com/platform/stable/intro/zensical.html)
 
 [configure publishing source]: https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#publishing-with-a-custom-github-actions-workflow
 [configure the default folder]: https://docs.gitlab.com/user/project/pages/introduction/#customize-the-default-folder
