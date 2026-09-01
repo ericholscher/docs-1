@@ -11,6 +11,12 @@ file that is stripped from the file contents before the rest of the content is
 handed over to the Markdown parser. It can be used in templates to customize
 rendering per-page.
 
+!!! tip "Centralize metadata"
+
+    You can also provide metadata through the [meta plugin], which lets you
+    define metadata in `meta.yml` files instead of repeating it in each page's
+    front matter.
+
 ## Page title
 
 This property overrides the page title in the navigation and in the `title` tag:
@@ -54,9 +60,9 @@ icon: lucide/braces
 
 ## Page status
 
-A status can be assigned to each page, which is then displayed as part of the
-navigation sidebar. First, associate a status identifier with a description by
-adding the following to your configuration::
+A status can be assigned to each page and displayed in the navigation sidebar.
+First, associate a status identifier with a description by adding the following
+to your configuration:
 
 === "`zensical.toml`"
 
@@ -110,9 +116,8 @@ The following status identifiers are already defined:
 - :lucide-badge-alert: – `new`
 - :lucide-trash: – `deprecated`
 
-You can define a custom page status this way but if you want it to
-have an icon other than the default one you need to also configure
-that in your [`extra.css`][extra_css].
+You can define a custom page status this way. To give it an icon other than the
+default, also configure it in your [`extra.css`][extra_css].
 
 ## Page template
 
@@ -132,26 +137,33 @@ template: my_homepage.html
 ...
 ```
 
-## Hide sidebars
+## Hide page elements
 
-Zensical allows you to hide elements of a page such as the navigation sidebar
-and the table of contents:
+Use the `hide` front matter property to hide one or more elements of a page:
 
 ``` yaml
 ---
 hide:
-    - navigation
-    - toc
+  - navigation
+  - toc
 ---
 
 # Page title
 ...
 ```
 
-See the section on [hiding sidebars] in the navigation setup guide for more
-details.
+The following values are supported:
 
-For more information about controlling search, see the [setup guide for search].
+| Value | Element |
+| --- | --- |
+| `navigation` | [Navigation sidebar][hiding sidebars] |
+| `toc` | [Table of contents][hiding sidebars] |
+| `path` | [Navigation path] |
+| `footer` | [Previous and next page links] |
+| `feedback` | [Feedback widget] |
+| `tags` | [Page tags] |
+
+To exclude a page from search, see [Search exclusion].
 
 ## Customization
 
@@ -193,19 +205,22 @@ robots: noindex, nofollow
 
 ### Use in plugins
 
-Material for MkDocs plugins such as the tag plugin, the social plugin and the
-blog plugin also make extensive use of page metadata. As Zensical approaches
-[feature parity] with Material for MkDocs, we will be adding modules that
-implement equivalent functionality and that make use of metadata.
+Plugins can make extensive use of page metadata. For example, the tags plugin
+reads tags from page metadata, and the meta plugin can provide metadata for
+multiple pages at once.
 
 [block override]: ../customization.md#overriding-blocks
 [custom template]: ../customization.md#custom-templates
 [custom templates]: ../customization.md#custom-templates
 [extra_css]: ../customization.md#additional-css
-[feature parity]: https://zensical.org/about/roadmap/#feature-parity
 [hiding sidebars]: ../setup/navigation.md#hide-the-sidebars
+[Navigation path]: ../setup/navigation.md#hide-the-navigation-path
+[Previous and next page links]: ../setup/footer.md#hiding-prevnext-links
+[Feedback widget]: ../setup/analytics.md#hide-the-feedback-widget
+[Page tags]: ../plugins/tags.md#hide-tags
 [included icon sets]: icons-emojis.md#included-icon-sets
+[meta plugin]: ../plugins/meta.md
 [nofollow]: https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag
 [overrides directory]: ../customization.md#configuring-overrides
-[setup guide for search]: ../setup/search.md
+[Search exclusion]: ../setup/search.md#search-exclusion
 [template overrides]: ../customization.md#template-overrides
