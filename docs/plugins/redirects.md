@@ -1,0 +1,100 @@
+---
+icon: lucide/forward
+tags:
+  - Plugins
+  - Redirects
+---
+
+# Redirects
+
+The redirects plugin keeps old documentation links working after you move or
+rename a page.
+
+## How it works
+
+For each valid mapping, Zensical generates a static HTML page at the old
+location. The page redirects the browser with JavaScript and provides a
+`<meta http-equiv="refresh">` fallback. The JavaScript also preserves URL
+fragments, such as `#installation`, when sending visitors to the new location.
+Because the redirect is a static file, it works on static hosting without
+server-side redirect configuration.
+
+## Configuration
+
+Add source-to-target mappings to `redirect_maps`:
+
+=== "`zensical.toml`"
+
+    ``` toml
+    [project.plugins.redirects]
+    redirect_maps = {
+      "old.md" = "new.md",
+      "legacy/topic.md" = "guide/topic.md#details",
+      "external.md" = "https://example.com/new",
+    }
+    ```
+
+=== "`mkdocs.yml`"
+
+    ``` yaml
+    plugins:
+      - redirects:
+          redirect_maps:
+            old.md: new.md
+            legacy/topic.md: guide/topic.md#details
+            external.md: https://example.com/new
+    ```
+
+The source key must be the old Markdown source path relative to `docs_dir`. The
+corresponding source file must no longer be present: use the path it had before
+it was moved or renamed, not its generated HTML path. The following Markdown
+suffixes are recognized: `.md`, `.markdown`, `.mdown`, `.mkdn`, and `.mkd`.
+
+The source must be a safe relative path. Empty, absolute, parent-traversing,
+backslash-containing, and invalid paths cause a configuration error. A source
+with another suffix produces a warning; during a strict build, that warning
+fails the build.
+
+Targets beginning with `http://` or `https://` are treated as external URLs.
+All other targets are treated as Markdown source paths relative to `docs_dir`.
+Zensical resolves internal targets to the generated site URL and preserves
+fragments.
+
+Set `enabled` to `false` to keep redirect mappings in the configuration without
+generating redirect files:
+
+=== "`zensical.toml`"
+
+    ``` toml
+    [project.plugins.redirects]
+    enabled = false
+    ```
+
+=== "`mkdocs.yml`"
+
+    ``` yaml
+    plugins:
+      - redirects:
+          enabled: false
+    ```
+
+## Directory URLs
+
+The plugin follows `use_directory_urls`. With directory URLs enabled:
+
+- `old.md: new.md` writes `old/index.html` and points it to `../new/`.
+- `old/dir/README.md: new/dir/README.md` writes `old/dir/index.html` and points
+  it to `../../new/dir/`.
+- `old/dir/page.md: new/dir/page.md` writes `old/dir/page/index.html` and points
+  it to `../../new/dir/page/`.
+
+With directory URLs disabled, regular pages use `.html` output paths instead:
+`old.md: new.md` writes `old.html` and points it to `new.html`. Index pages
+still use `index.html` in their directory.
+
+## Validation
+
+Zensical warns when an internal target does not exist and does not write that
+redirect. During a strict build, the warning fails the build. Duplicate
+redirect outputs and redirect outputs that collide with a page, asset, or
+template cause a configuration error.
