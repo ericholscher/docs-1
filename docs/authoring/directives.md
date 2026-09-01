@@ -58,9 +58,7 @@ extension:
 
 ``` toml
 [project.markdown_extensions]
-zensical.directives = {
-  content_dir = "shared",
-}
+zensical.directives = { content_dir = "shared" }
 ```
 
 Create `catalog.toml` in the project root. It declares the values that source

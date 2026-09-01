@@ -27,11 +27,11 @@ Add source-to-target mappings to `redirect_maps`:
 
     ``` toml
     [project.plugins.redirects]
-    redirect_maps = {
-      "old.md" = "new.md",
-      "legacy/topic.md" = "guide/topic.md#details",
-      "external.md" = "https://example.com/new",
-    }
+
+    [project.plugins.redirects.redirect_maps]
+    "old.md" = "new.md"
+    "legacy/topic.md" = "guide/topic.md#details"
+    "external.md" = "https://example.com/new"
     ```
 
 === "`mkdocs.yml`"
